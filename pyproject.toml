@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "linux-hardening-audit"
+version = "0.1.0"
+description = "Read-only Linux hardening audit (SSH, file permissions, firewall, updates) with a pass/warn/fail report."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+linux-hardening-audit = "hardening_audit:main"
+
+[tool.setuptools]
+py-modules = ["hardening_audit"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
